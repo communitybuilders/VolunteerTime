@@ -6,11 +6,16 @@ import React from 'react';
 
 import {
     Text,
+    ViewPropTypes,
 } from 'react-native';
 
 import moment from 'moment';
 
 export default class Stopwatch extends React.Component {
+    static propTypes = {
+        style: Text.propTypes.style,
+    };
+
     interval;
 
     constructor(props) {
@@ -60,8 +65,10 @@ export default class Stopwatch extends React.Component {
     }
 
     render() {
+        let {style} = this.props;
+
         return (
-            <Text>{this.getFormattedDate()}</Text>
+            <Text style={style}>{this.getFormattedDate()}</Text>
         );
     }
 }

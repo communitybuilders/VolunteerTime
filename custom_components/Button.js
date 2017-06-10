@@ -16,18 +16,14 @@ import {
 import Styles from '../helpers/Styles';
 
 export default class Button extends React.Component {
-    static propTypes = {
-        onPress: PropTypes.func,
-        style: ViewPropTypes.style,
-        title: PropTypes.string,
-    };
+    static propTypes = TouchableHighlight.propTypes;
 
     render() {
         let {style} = this.props;
 
         return (
-            <View style={[Styles.row, style]}>
-                <TouchableHighlight style={Styles.button} underlayColor='#6445b3' onPress={() => this.props.onPress && this.props.onPress()}>
+            <View style={Styles.row}>
+                <TouchableHighlight underlayColor='#6445b3' {...this.props} style={[Styles.button, style]}>
                     <Text style={Styles.buttonText}>{this.props.title}</Text>
                 </TouchableHighlight>
             </View>
