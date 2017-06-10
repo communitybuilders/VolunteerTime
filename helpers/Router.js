@@ -7,7 +7,7 @@ import Login from '../views/Login';
 import Profile from '../views/Profile';
 import SelectEvent from '../views/SelectEvent';
 import RHokTime from '../views/RHoKTime';
-import Feedback from '../views/Feedback';
+import Share from '../views/Share';
 
 class Router {
     static ROUTES = {
@@ -27,9 +27,9 @@ class Router {
             title: 'RHoK Time',
             component: RHokTime
         },
-        Feedback: {
-            title: 'Feedback',
-            component: Feedback,
+        Share: {
+            title: 'Share',
+            component: Share,
         }
     };
 
