@@ -5,6 +5,7 @@
 
 import Login from '../views/Login';
 import Profile from '../views/Profile';
+import MyTracks from '../views/MyTracks';
 import SelectEvent from '../views/SelectEvent';
 import RHokTime from '../views/RHoKTime';
 import Share from '../views/Share';
@@ -18,6 +19,10 @@ class Router {
         Profile: {
             title: 'My Profile',
             component: Profile,
+        },
+        MyTracks: {
+            title: 'My Tracks',
+            component: MyTracks,
         },
         SelectEvent: {
             title: 'Select Event',

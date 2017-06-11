@@ -91,6 +91,7 @@ export default class Profile extends React.Component {
                 <Button
                     style={Styles.spacedTop}
                     title={'My tracks'}
+                    onPress={() => this.props.navigator.push(Router.addProps(Router.ROUTES.MyTracks))} 
                 />
 
                 <Button
