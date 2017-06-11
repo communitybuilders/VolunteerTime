@@ -73,7 +73,7 @@ export default class Profile extends React.Component {
 
         return (
             <View style={[Styles.container, Styles.centered, Styles.padded]}>
-                {/* TODO: Logo */}
+
                 <Image style={{height: 100, width: 200, borderRadius: 50, marginBottom: 50}} source={require('./assets/logo-dots-small.png')} />
 
                 <Text>Hi {this.props.user.displayname}, welcome back!</Text>
