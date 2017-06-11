@@ -30,7 +30,7 @@ export default class RHoKTime extends React.Component {
     }
 
     _rhokOut() {
-        this.props.navigator.push(Router.ROUTES.Share);
+        this.props.navigator.push(Router.ROUTES.Feedback);
     }
 
     _hidePrompt() {

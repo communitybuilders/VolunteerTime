@@ -8,6 +8,7 @@ import Profile from '../views/Profile';
 import MyTracks from '../views/MyTracks';
 import SelectEvent from '../views/SelectEvent';
 import RHokTime from '../views/RHoKTime';
+import Feedback from '../views/Feedback';
 import Share from '../views/Share';
 
 class Router {
@@ -31,6 +32,10 @@ class Router {
         RHokTime: {
             title: 'RHoK Time',
             component: RHokTime
+        },
+        Feedback: {
+            title: 'Feedback',
+            component: Feedback
         },
         Share: {
             title: 'Share',
