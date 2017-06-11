@@ -31,7 +31,7 @@ export default class Profile extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://dev.ldap-sync.myelectorate.com.au/api/getbadges", {
+        fetch("https://auth.communitybuilder.com.au/api/getbadges", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -74,7 +74,7 @@ export default class Profile extends React.Component {
         return (
             <View style={[Styles.container, Styles.centered, Styles.padded]}>
                 {/* TODO: Logo */}
-                <Image style={{height: 100, width: 100, borderRadius: 50, marginBottom: 50}} source={{uri: `http://dev.ldap-sync.myelectorate.com.au/public/image/${this.props.user.uidNumber}`}} />
+                <Image style={{height: 100, width: 100, borderRadius: 50, marginBottom: 50}} source={{uri: `https://auth.communitybuilder.com.au/public/image/${this.props.user.uidNumber}`}} />
 
                 <Text>Hi {this.props.user.displayname}, welcome back!</Text>
 

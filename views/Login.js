@@ -31,7 +31,7 @@ class Login extends React.Component{
         this.setState({message: null});
 
         // TODO: change url
-        fetch("http://dev.ldap-sync.myelectorate.com.au/apigility/oauth/authenticate", {
+        fetch("https://auth.communitybuilder.com.au/apigility/oauth/authenticate", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
