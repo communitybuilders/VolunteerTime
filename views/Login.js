@@ -9,11 +9,9 @@ const {
     Text,
     TextInput,
     View,
-    TouchableHighlight,
     AsyncStorage,
 } = ReactNative;
 
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 import Button from "../custom_components/Button";
 
 import Router from '../helpers/Router';
@@ -76,12 +74,8 @@ class Login extends React.Component{
 
     render() {
         return (
-            <KeyboardAwareScrollView
-                style={[Styles.container, Styles.padded]}
-                contentContainerStyle={Styles.centered}
-                keyboardShouldPersistTaps="always"
-                getTextInputRefs={() => [this._usernameInput, this._passwordInput]}
-                scrollToInputAdditionalOffset={150}
+            <View
+                style={[Styles.container, Styles.padded, Styles.centered]}
             >
                 <View style={Styles.row}>
                     <TextInput
@@ -118,7 +112,7 @@ class Login extends React.Component{
                 />
 
                 <Text>{this.state.message}</Text>
-            </KeyboardAwareScrollView>
+            </View>
         );
     }
 }

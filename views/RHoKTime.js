@@ -57,6 +57,10 @@ export default class RHoKTime extends React.Component {
 
         setTimeout(() => {
             this.props.toggleModal(false);
+
+            setTimeout(() => {
+                alert("Your issue has been reported.");
+            }, 500);
         }, 1500);
     }
 
@@ -92,7 +96,10 @@ export default class RHoKTime extends React.Component {
             <Animated.View
                 style={{position: 'absolute', top: 0, bottom: 0, transform: [{translateY: this.state.feedbackY}]}}
             >
-                <Feedback />
+                <Feedback
+                    toggleModal={this.props.toggleModal}
+                    navigator={this.props.navigator}
+                />
             </Animated.View>
         </View>
     }

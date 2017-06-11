@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+    PropTypes,
+} from 'react';
 
 import {
     View,
@@ -6,6 +8,8 @@ import {
     TextInput,
     TouchableHighlight,
     Image,
+    Keyboard,
+    ScrollView,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -23,6 +27,11 @@ const styles = {
 };
 
 export default class Feedback extends React.Component {
+    static propTypes = {
+        toggleModal: PropTypes.func.isRequired,
+        navigator: PropTypes.object.isRequired,
+    };
+
     constructor(props) {
         super(props);
 
@@ -31,6 +40,7 @@ export default class Feedback extends React.Component {
         };
 
         this._showImagePicker = this._showImagePicker.bind(this);
+        this._shareFeedback = this._shareFeedback.bind(this);
     }
 
     _showImagePicker() {
@@ -46,18 +56,37 @@ export default class Feedback extends React.Component {
         };
 
         ImagePicker.showImagePicker(options, (response) => {
-            this.setState({
-                avatarSource: {
-                    uri: response.uri.replace('file://', ''),
-                    isStatic: true
-                }
-            });
+            if( response.uri ) {
+                this.setState({
+                    imageSource: {
+                        uri: response.uri.replace('file://', ''),
+                        isStatic: true
+                    }
+                });
+            }
         });
+    }
+
+    _shareFeedback() {
+        this.props.toggleModal(true);
+
+        // TODO: Fixme
+        setTimeout(() => {
+            this.props.toggleModal(false);
+
+            setTimeout(() => {
+                alert("Thanks for sharing!");
+            }, 500);
+
+            this.props.navigator.pop();
+        }, 700);
     }
 
     render() {
         return (
-            <View style={[Styles.container, Styles.centered, Styles.padded]}>
+            <ScrollView contentContainerStyle={[{flex: 1, backgroundColor: '#E9EBEA'}, Styles.centered]}>
+                <Text style={[Styles.headerTitle]}>Finished RHoKing!</Text>
+
                 <Text>What do you think about the volunteer event?</Text>
 
                 <View style={Styles.row}>
@@ -67,11 +96,14 @@ export default class Feedback extends React.Component {
                     />
                 </View>
 
-                <StarRating style={[Styles.spacedTop, Styles.spacedBottom]} />
+                <StarRating
+                    style={[Styles.spacedTop, Styles.spacedBottom]}
+                    onNewCount={(newCount) => Keyboard.dismiss()}
+                />
 
                 {this.state.imageSource
                     ? <Image
-                        style={Styles.avatar}
+                        style={[Styles.avatar, {alignSelf: 'center'}]}
                         source={this.state.imageSource}
                     />
                     : null
@@ -88,10 +120,10 @@ export default class Feedback extends React.Component {
 
                 <Button
                     title={'Share feedback'}
-                    onPress={() => {}}
+                    onPress={this._shareFeedback}
                     style={styles.spaced}
                 />
-            </View>
+            </ScrollView>
         );
     }
 }

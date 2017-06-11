@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+    PropTypes,
+} from 'react';
 
 import {
     View,
@@ -12,6 +14,10 @@ const STAR_MARGIN = 15;
 const STAR_SIZE = 50;
 
 export default class StarRating extends React.Component {
+    static propTypes = {
+        onNewCount: PropTypes.func,
+    };
+
     _panResponder;
 
     constructor(props) {
@@ -20,6 +26,12 @@ export default class StarRating extends React.Component {
         this.state = {
             selectedStarsCount: []
         };
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if( prevState.selectedStarsCount !== this.state.selectedStarsCount ) {
+            this._onNewCount();
+        }
     }
 
     componentWillMount() {
@@ -52,6 +64,10 @@ export default class StarRating extends React.Component {
                 this.setState({selectedStarsCount: starPosition + 1 + numberOfStarsToSelect});
             },
         });
+    }
+
+    _onNewCount() {
+        this.props.onNewCount && this.props.onNewCount(this.state.selectedStarsCount);
     }
 
     static _getStarPosition(nodeId) {
