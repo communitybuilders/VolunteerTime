@@ -15,6 +15,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImagePicker from 'react-native-image-picker';
 
+import Router from '../helpers/Router';
 import Styles from '../helpers/Styles';
 import StarRating from '../custom_components/StarRating';
 import Button from '../custom_components/Button';
@@ -75,10 +76,10 @@ export default class Feedback extends React.Component {
             this.props.toggleModal(false);
 
             setTimeout(() => {
-                alert("Thanks for sharing!");
+                alert("Thanks for your feedback!");
+                this.props.navigator.push(Router.ROUTES.Share);
             }, 500);
 
-            this.props.navigator.pop();
         }, 700);
     }
 
@@ -111,15 +112,16 @@ export default class Feedback extends React.Component {
 
                 <View style={Styles.row}>
                     <TouchableHighlight style={[Styles.button, styles.spaced]} underlayColor={'#6F48C1'} onPress={this._showImagePicker}>
-                        <View style={Styles.row}>
+                        <View style={[Styles.row, {flex: 1, justifyContent: 'space-around'}]}>
                             <Icon name={'camera'} size={30} color={'#d7d7d7'} />
-                            <Text style={{color: '#fff'}}> Add a photo of the event</Text>
+
+                            <Text style={Styles.buttonText}> Add a photo of the event</Text>
                         </View>
                     </TouchableHighlight>
                 </View>
 
                 <Button
-                    title={'Share feedback'}
+                    title={'Send feedback'}
                     onPress={this._shareFeedback}
                     style={styles.spaced}
                 />

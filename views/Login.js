@@ -23,8 +23,8 @@ class Login extends React.Component{
         super(props);
 
         this.state = {
-          username: "demo.account",
-          password: "demo123"
+            username: 'demo.account',
+            password: 'demo123',
         };
     }
 
@@ -122,11 +122,11 @@ class Login extends React.Component{
                             onPress={this.onPressSignUp.bind(this)}
                         />
 
-                <Button
+                        <Button
                             style={{flex: 0, padding: 20}}
-                    title={'LOG IN'}
-                    onPress={this.onPressLogIn.bind(this)}
-                />
+                            title={'LOG IN'}
+                            onPress={this.onPressLogIn.bind(this)}
+                        />
                     </View>
                 </View>
 

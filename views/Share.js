@@ -6,13 +6,14 @@ import React from 'react';
 
 import {
     View,
-    TextInput,
+    Text,
     TouchableHighlight,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Styles from '../helpers/Styles';
 import RNShare from 'react-native-share';
+import Button from "../custom_components/Button";
 
 export default class Share extends React.Component {
     constructor(props) {
@@ -31,18 +32,34 @@ export default class Share extends React.Component {
     render() {
         return (
             <View style={[Styles.container, Styles.padded, {alignItems: 'center'}]}>
-                <View style={[Styles.row, {justifyContent: 'space-between', width: 200}]}>
-                    <TouchableHighlight style={{padding: 10, backgroundColor: '#3b5998', width: 30, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('facebook')}>
-                        <Icon name={'facebook'} color={'#fff'} />
-                    </TouchableHighlight>
+                <Text style={[Styles.headerTitle, {marginBottom: 50}]}>Share your achievement to social media!</Text>
 
-                    <TouchableHighlight style={{padding: 10, backgroundColor: '#00aced', width: 30, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('twitter')}>
-                        <Icon name={'twitter'} color={'#fff'} />
-                    </TouchableHighlight>
+                <View style={[Styles.row]}>
+                    <View style={{flex: 1, marginLeft: 20}}>
+                        <TouchableHighlight style={{padding: 10, backgroundColor: '#3b5998', width: 70, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('facebook')}>
+                            <Icon name={'facebook'} color={'#fff'} size={50} />
+                        </TouchableHighlight>
+                    </View>
 
-                    <TouchableHighlight style={{padding: 10, backgroundColor: '#0d77b7', width: 30, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('linkedIn')}>
-                        <Icon name={'linkedin'} color={'#fff'} />
-                    </TouchableHighlight>
+                    <View style={{flex: 1}}>
+                        <TouchableHighlight style={{padding: 10, backgroundColor: '#00aced', width: 70, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('twitter')}>
+                            <Icon name={'twitter'} color={'#fff'} size={50} />
+                        </TouchableHighlight>
+                    </View>
+
+                    <View style={{flex: 1}}>
+                        <TouchableHighlight style={{padding: 10, backgroundColor: '#0d77b7', width: 70, alignItems: 'center', borderRadius: 7}} onPress={() => this.constructor._shareSocialMedia('linkedIn')}>
+                            <Icon name={'linkedin'} color={'#fff'} size={50} />
+                        </TouchableHighlight>
+                    </View>
+                </View>
+
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                <Button
+                    style={{flex: 0, padding: 20, alignSelf: 'flex-end'}}
+                    title={'I\'m ready to RHoK some more'}
+                    onPress={() => this.props.navigator.popN(2)}
+                />
                 </View>
             </View>
         )
