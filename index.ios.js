@@ -5,6 +5,7 @@ import {
     AppRegistry,
     View,
     StyleSheet,
+    AsyncStorage,
 } from 'react-native';
 
 import Router from './helpers/Router';
