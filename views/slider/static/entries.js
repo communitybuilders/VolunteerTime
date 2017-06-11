@@ -1,33 +1,27 @@
 export const ENTRIES1 = [
     {
-        title: 'Beautiful and dramatic Antelope Canyon',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'http://i.imgur.com/UYiroysl.jpg'
+        title: 'National Landcare Network',
+        subtitle: 'National Landcare Network',
+        website: 'http://nln.org.au/',
+        illustration: 'http://nln.org.au/wp-content/uploads/2014/08/NRM-assistance-412x275.jpg'
     },
     {
-        title: 'Earlier this morning, NYC',
-        subtitle: 'Lorem ipsum dolor sit amet',
+        title: 'Australian Landcare International',
+        subtitle: 'Australian Landcare International',
+        website: 'http://alci.com.au/',
         illustration: 'http://i.imgur.com/UPrs1EWl.jpg'
     },
     {
-        title: 'White Pocket Sunset',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
+        title: 'BlazeAid',
+        subtitle: 'BlazeAid helping communities rebuild after Natural Disasters.',
+        website: 'http://nln.org.au/',
         illustration: 'http://i.imgur.com/MABUbpDl.jpg'
     },
     {
-        title: 'Acrocorinth, Greece',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        title: 'Australian Red Cross',
+        subtitle: 'Humanitarian Aid - Donate or Join Us',
+        website: 'http://www.redcross.org.au/',
         illustration: 'http://i.imgur.com/KZsmUi2l.jpg'
-    },
-    {
-        title: 'The lone tree, majestic landscape of New Zealand',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/2nCt3Sbl.jpg'
-    },
-    {
-        title: 'Middle Earth, Germany',
-        subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/lceHsT6l.jpg'
     }
 ];
 

@@ -98,15 +98,13 @@ export default class MyTracks extends React.Component {
             <View style={[Styles.container, Styles.centered, Styles.padded]}>
                 {/* TODO: Logo */}
 
-                <Text>Hi, welcome back!</Text>
+                <Image style={{height: 100, width: 200, borderRadius: 50, marginBottom: 50}} source={require('./assets/logo-dots-small.png')} />
 
                 <ScrollView
                   style={styles.scrollview}
                   indicatorStyle={'white'}
                   scrollEventThrottle={200}
                 >
-                    <Text style={styles.title}>Example 1</Text>
-                    <Text style={styles.subtitle}>No momentum | Scale | Opacity</Text>
                     { this.example1 }
 
                 </ScrollView>

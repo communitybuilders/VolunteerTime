@@ -22,7 +22,10 @@ class Login extends React.Component{
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+          username: "demo.account",
+          password: "demo123"
+        };
     }
 
     onPressLogIn() {
