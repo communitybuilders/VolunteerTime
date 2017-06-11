@@ -7,6 +7,7 @@ import React from "react";
 import {
     View,
     Animated,
+    Text,
 } from 'react-native';
 
 import Styles from '../helpers/Styles';
@@ -68,6 +69,8 @@ export default class RHoKTime extends React.Component {
         return <View
             style={[Styles.container, Styles.padded, Styles.centered]}
         >
+            <Text>RHoKing for:</Text>
+
             <Stopwatch
                 style={{fontSize: 50}}
                 ref={(ref) => this.stopwatch = ref}

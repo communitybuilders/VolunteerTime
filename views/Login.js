@@ -10,6 +10,7 @@ const {
     TextInput,
     View,
     AsyncStorage,
+    Linking,
 } = ReactNative;
 
 import Button from "../custom_components/Button";
@@ -42,6 +43,10 @@ class Login extends React.Component{
             .then(response => response.json())
             .then(json => this.handleLogInResponse(json))
             .catch(error => this.handleError(error.message));
+    }
+
+    onPressSignUp() {
+        Linking.openURL('https://auth.communitybuilder.com.au/user/login').catch(err => console.error('An error occurred', err));
     }
 
     handleError(message) {
@@ -106,10 +111,21 @@ class Login extends React.Component{
                     />
                 </View>
 
+                <View style={Styles.row}>
+                    <View style={[Styles.row, {justifyContent: 'space-between', flex: 1}]}>
+                        <Button
+                            style={{flex: 0, padding: 20}}
+                            title={'SIGN UP'}
+                            onPress={this.onPressSignUp.bind(this)}
+                        />
+
                 <Button
+                            style={{flex: 0, padding: 20}}
                     title={'LOG IN'}
                     onPress={this.onPressLogIn.bind(this)}
                 />
+                    </View>
+                </View>
 
                 <Text>{this.state.message}</Text>
             </View>
