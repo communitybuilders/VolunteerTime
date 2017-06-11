@@ -1,27 +1,27 @@
 export const ENTRIES1 = [
     {
         title: 'National Landcare Network',
-        subtitle: 'National Landcare Network',
+        subtitle: 'The National Landcare Network (NLN)  works to provide a voice for Landcare at the national level.',
         website: 'http://nln.org.au/',
         illustration: 'http://nln.org.au/wp-content/uploads/2014/08/NRM-assistance-412x275.jpg'
     },
     {
         title: 'Australian Landcare International',
-        subtitle: 'Australian Landcare International',
+        subtitle: 'ALI aims to support overseas communities to manage and sustain their land, water and biodiversity.',
         website: 'http://alci.com.au/',
-        illustration: 'http://i.imgur.com/UPrs1EWl.jpg'
+        illustration: 'http://alci.com.au/wp-content/uploads/2013/05/group-weed-cleanout-NZ11.jpg'
     },
     {
         title: 'BlazeAid',
-        subtitle: 'BlazeAid helping communities rebuild after Natural Disasters.',
-        website: 'http://nln.org.au/',
-        illustration: 'http://i.imgur.com/MABUbpDl.jpg'
+        subtitle: 'BlazeAid works with families and individuals in rural Australia after fires and floods. ',
+        website: 'http://blazeaid.com/',
+        illustration: 'https://i2.wp.com/blazeaid.com/wp-content/uploads/2013/01/B003.jpg?zoom=2&resize=188%2C144'
     },
     {
         title: 'Australian Red Cross',
-        subtitle: 'Humanitarian Aid - Donate or Join Us',
+        subtitle: 'Red Cross is there for people in need, no matter who you are, no matter where you live.',
         website: 'http://www.redcross.org.au/',
-        illustration: 'http://i.imgur.com/KZsmUi2l.jpg'
+        illustration: 'http://www.redcross.org.au/common/images/backgrounds/east-africa-8-may.jpg'
     }
 ];
 
