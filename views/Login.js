@@ -30,7 +30,6 @@ class Login extends React.Component{
         this.props.toggleModal(true);
         this.setState({message: null});
 
-        // TODO: change url
         fetch("https://auth.communitybuilder.com.au/apigility/oauth/authenticate", {
             method: "POST",
             headers: {

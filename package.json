@@ -12,6 +12,7 @@
     "react-native": "0.44.0",
     "react-native-deprecated-custom-components": "latest",
     "react-native-dropdown-modal": "^1.0.5",
+    "react-native-image-picker": "^0.26.3",
     "react-native-keyboard-aware-scrollview": "^1.1.5",
     "react-native-maps": "^0.15.2",
     "react-native-prompt": "^1.0.0",

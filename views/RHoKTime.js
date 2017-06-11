@@ -6,13 +6,14 @@ import React from "react";
 
 import {
     View,
+    Animated,
 } from 'react-native';
 
 import Styles from '../helpers/Styles';
 import Stopwatch from '../custom_components/Stopwatch';
 import Button from '../custom_components/Button';
-import Router from '../helpers/Router';
 import Prompt from 'react-native-prompt';
+import Feedback from "./Feedback";
 
 export default class RHoKTime extends React.Component {
     stopwatch;
@@ -22,6 +23,7 @@ export default class RHoKTime extends React.Component {
 
         this.state = {
             issuePromptVisible: false,
+            feedbackY: new Animated.Value(600),
         };
 
         this._rhokOut = this._rhokOut.bind(this);
@@ -30,7 +32,18 @@ export default class RHoKTime extends React.Component {
     }
 
     _rhokOut() {
-        this.props.navigator.push(Router.ROUTES.Feedback);
+        // Stop RHoKing and show the feedback screen.
+        this.stopwatch.stop();
+
+        Animated.spring(
+            this.state.feedbackY,
+            {
+                toValue: 0,
+                velocity: 3,
+                tension: 5,
+                friction: 6,
+            }
+        ).start();
     }
 
     _hidePrompt() {
@@ -75,6 +88,12 @@ export default class RHoKTime extends React.Component {
                 title={'RHoK Out!'}
                 onPress={this._rhokOut}
             />
+
+            <Animated.View
+                style={{position: 'absolute', top: 0, bottom: 0, transform: [{translateY: this.state.feedbackY}]}}
+            >
+                <Feedback />
+            </Animated.View>
         </View>
     }
 }

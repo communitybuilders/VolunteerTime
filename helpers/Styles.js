@@ -19,7 +19,7 @@ const Styles = StyleSheet.create({
     container: {
         marginTop: navHeight,
         backgroundColor: '#E9EBEA',
-        flex: 1
+        flex: 1,
     },
     badge: {
         height: 40,

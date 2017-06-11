@@ -59,10 +59,12 @@ export default class StarRating extends React.Component {
     }
 
     render() {
+        let {style} = this.props;
+
         let stars = [];
 
         for( let i = 0; i < 5; i++ ) {
-            let color = this.state.selectedStarsCount > i ? 'gold' : 'black';
+            let color = this.state.selectedStarsCount > i ? 'gold' : '#dddddd';
 
             stars.push(
                 <View key={i} style={{marginRight: STAR_MARGIN}} {...this._panResponder.panHandlers}>
@@ -71,6 +73,6 @@ export default class StarRating extends React.Component {
             )
         }
 
-        return <View style={{flexDirection: 'row'}}>{stars}</View>;
+        return <View style={[{flexDirection: 'row'}, style]}>{stars}</View>;
     }
 }

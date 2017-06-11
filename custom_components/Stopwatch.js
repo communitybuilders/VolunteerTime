@@ -6,7 +6,6 @@ import React from 'react';
 
 import {
     Text,
-    ViewPropTypes,
 } from 'react-native';
 
 import moment from 'moment';
