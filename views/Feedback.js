@@ -85,7 +85,7 @@ export default class Feedback extends React.Component {
 
     render() {
         return (
-            <ScrollView contentContainerStyle={[{flex: 1, backgroundColor: '#E9EBEA'}, Styles.centered]}>
+            <ScrollView contentContainerStyle={[{flex: 1, backgroundColor: '#fff'}, Styles.centered]}>
                 <Text style={[Styles.headerTitle]}>Finished RHoKing!</Text>
 
                 <Text>What do you think about the volunteer event?</Text>

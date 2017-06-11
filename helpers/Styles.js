@@ -18,7 +18,7 @@ const navHeight = Platform.OS === 'ios'? 64 : 54; // nav bar height
 const Styles = StyleSheet.create({
     container: {
         marginTop: navHeight,
-        backgroundColor: '#E9EBEA',
+        backgroundColor: '#fff',
         flex: 1,
     },
     badge: {
