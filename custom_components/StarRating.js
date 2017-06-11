@@ -80,7 +80,7 @@ export default class StarRating extends React.Component {
         let stars = [];
 
         for( let i = 0; i < 5; i++ ) {
-            let color = this.state.selectedStarsCount > i ? 'gold' : '#dddddd';
+            let color = this.state.selectedStarsCount > i ? '#ff16ac' : '#dddddd';
 
             stars.push(
                 <View key={i} style={{marginRight: STAR_MARGIN}} {...this._panResponder.panHandlers}>
