@@ -56,10 +56,10 @@ export default class MyTracks extends React.Component {
             <Carousel
               sliderWidth={sliderWidth}
               itemWidth={itemWidth}
-              firstItem={1}
+              firstItem={0}
               inactiveSlideScale={0.94}
               inactiveSlideOpacity={0.6}
-              enableMomentum={true}
+              enableMomentum={false}
               containerCustomStyle={styles.slider}
               contentContainerCustomStyle={styles.sliderContainer}
               showsHorizontalScrollIndicator={true}
