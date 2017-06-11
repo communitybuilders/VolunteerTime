@@ -18,6 +18,7 @@ import Util from '../helpers/Util';
 import Common from '../helpers/Common';
 import Button from "../custom_components/Button";
 import Router from "../helpers/Router";
+import {ENTRIES1} from "./slider/static/entries";
 
 export default class SelectEvent extends React.Component {
     addressTimeout;
@@ -73,7 +74,8 @@ export default class SelectEvent extends React.Component {
                     <View style={Styles.row}>
                         <Dropdown
                             {...Common.dropdownProps}
-                            dataSource={['Charity 1', 'Charity 2']}
+                            dataSource={ENTRIES1}
+                            titleProperty={'title'}
                         />
                     </View>
 
